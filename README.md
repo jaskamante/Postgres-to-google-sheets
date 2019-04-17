@@ -36,6 +36,7 @@ Python Libraries:
 psycopg2
 pandas
 pygsheets
+json
 
 	
 •	Carry out the following steps to connect to the Google Drive API in your code
