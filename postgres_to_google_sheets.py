@@ -3,8 +3,9 @@ import pandas as pd
 import pygsheets
 from psycopg2 import Error
 from connection import connection
-from config import CONFIG_INFO 
+from config import config
 import os
+import json
 
 def table_to_sheets(table_name, sheet_name):
     #Connect to the PostgreSQL database server
@@ -12,13 +13,16 @@ def table_to_sheets(table_name, sheet_name):
     try:
         # read connection parameters
         params = connection()
+
+        print (params)
  
         # connect to the PostgreSQL server
         print('connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
-        
+        config_data = config()
         # get config info
-        credential_file_name = format(CONFIG_INFO["credential_file_name"])
+
+        credential_file_name = config_data['credential_file_name']
 
         #Using pandas library, get the data from the table as a dataFrame
         df = pd.read_sql('SELECT * FROM {tname}'.format(tname = table_name), conn)

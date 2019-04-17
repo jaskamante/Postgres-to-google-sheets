@@ -12,23 +12,33 @@ Files required:
 
 postgres_to_google_sheets.py
 
-connection.py - parses and returns the database connection details
+connection.py - returns the database connection details
 
 test_table_to_sheets.py – shows example usage as defined in the spec
 
-config.py – holds the table name, google sheet name and credential file name
+config.py – returns the google sheets connection details
 
 client_secret.json – the credentials for accessing your Google Drive API (do not check in to GIT)
 
-database.ini – holds the database connection details (do not check in to GIT)
+config.json – holds the database connection details and the google spreadsheet details (do not check in to GIT)
+
+Note that I have provided dummy files as templates. You can  update these and rename them to remove the dummy_
 
 Set up required:
+----------------
 
-•	Add your db connection details to a database.ini file in the same working directory as the python scripts
+•	Add your db connection details and google spreadsheet details to the config.json file file in the same working directory as the python scripts
 
-•	Install the Python libraries below
+•	Install the Python libraries shown below
+
+Python Libraries:
+
+psycopg2
+pandas
+pygsheets
+
 	
-•	Google Sheets API 
+•	Carry out the following steps to connect to the Google Drive API in your code
 1.	Go to the Google APIs Console.
 2.	Create a new project.
 3.	Click Enable API. Search for and enable the Google Drive API.
@@ -39,8 +49,3 @@ Set up required:
 8.	Create a new google sheet with the same name as that specified in your config.py
 9.	Share the sheet with the email in your client_secret.json
 
-Python Libraries:
-
-psycopg2
-pandas
-pygsheets
