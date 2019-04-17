@@ -1,18 +1,17 @@
-from configparser import ConfigParser
+import json
 
-def connection(filename='database.ini', section='postgresql'):
-    # create a parser
-    parser = ConfigParser()
-    # read config file
-    parser.read(filename)
- 
-    # get section, default to postgresql
+with open('config.json') as config_file:
+    data = json.load(config_file)
+
+# database connection details
+
+def connection():
+
     db = {}
-    if parser.has_section(section):
-        params = parser.items(section)
-        for param in params:
-            db[param[0]] = param[1]
-    else:
-        raise Exception('Section {0} not found in the {1} file'.format(section, filename))
- 
+    db['host'] = data['postgres']['host']
+    db['database'] = data['postgres']['database']
+    db['user'] = data['postgres']['user']
+    db['password'] = data['postgres']['password']
+    print(db)
     return db
+
