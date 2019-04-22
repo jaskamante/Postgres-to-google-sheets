@@ -61,6 +61,6 @@ def table_to_sheets(table_name, sheet_name):
             print('database connection closed')
  
 #if __name__ == '__main__':
-   # table_to_sheets()
+   # table_to_sheets(table_name, sheet_name)
 
 
