@@ -7,7 +7,7 @@ from config import config
 import os
 import json
 
-def table_to_sheets(table_name, sheet_name):
+def table_to_sheets(query, sheet_name):
     #Connect to the PostgreSQL database server
     conn = None
     try:
@@ -25,7 +25,7 @@ def table_to_sheets(table_name, sheet_name):
         credential_file_name = config_data['credential_file_name']
 
         #Using pandas library, get the data from the table as a dataFrame
-        df = pd.read_sql('SELECT * FROM {tname}'.format(tname = table_name), conn)
+        df = pd.read_sql('{query}'.format(query = query), conn)
         #print(df)
         print('successfully read in data')
 
@@ -61,6 +61,6 @@ def table_to_sheets(table_name, sheet_name):
             print('database connection closed')
  
 #if __name__ == '__main__':
-   # table_to_sheets(table_name, sheet_name)
+   # table_to_sheets(query, sheet_name)
 
 
