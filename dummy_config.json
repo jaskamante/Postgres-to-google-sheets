@@ -3,7 +3,8 @@
         "host":"<your host>",
         "dbname":"<your database name>",
         "user":"<your user>",
-        "password":"<your password>"
+        "password":"<your password>",
+        "port":"<your postgres port>"
     },
 
     "gsheets":{
