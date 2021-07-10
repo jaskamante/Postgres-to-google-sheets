@@ -8,7 +8,6 @@
     },
 
     "gsheets":{
-        "table_name": "<your table name>",
         "sheet_name": "<your sheet name>",
         "credential_file_name": "client_secret.json"
     }
