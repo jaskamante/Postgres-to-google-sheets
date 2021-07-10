@@ -1,7 +1,7 @@
 {
     "postgres":{
         "host":"<your host>",
-        "dbname":"<your database name>",
+        "database":"<your database name>",
         "user":"<your user>",
         "password":"<your password>",
         "port":"<your postgres port>"
