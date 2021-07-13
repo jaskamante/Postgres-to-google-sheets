@@ -39,11 +39,11 @@ def table_to_sheets(query, sheet_name):
         print('successfully authorised and connected to google sheets')
 
         #open the google spreadsheet with the provided sheet name
-        sh = gc.open(sheet_name)
+        sh = gc.open_by_key(sheet_name)
         print('opened the sheet with the sheet name provided as ' + sheet_name)
         
         #select the first sheet as the worksheet
-        wks = sh[0]
+        wks = sh.sheet1
 
         #clear the worksheet
         wks.clear(start='A1', end=None, fields='*')
