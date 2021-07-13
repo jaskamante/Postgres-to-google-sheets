@@ -7,7 +7,12 @@ from config import config
 
 #google sheets details
 config_data = config()
-table_name = config_data.get('table_name')
+query = '''
+SELECT *
+FROM test_table
+ORDER BY id
+LIMIT 10;
+'''
 sheet_name = config_data['sheet_name']
 
 # call function to transfer data from a table to google sheets

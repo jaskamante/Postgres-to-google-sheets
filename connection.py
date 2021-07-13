@@ -9,6 +9,7 @@ def connection():
 
     db = {}
     db['host'] = data['postgres']['host']
+    db['port'] = data['postgres']['port']
     db['database'] = data['postgres']['database']
     db['user'] = data['postgres']['user']
     db['password'] = data['postgres']['password']
