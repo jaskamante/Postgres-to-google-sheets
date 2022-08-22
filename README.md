@@ -55,3 +55,7 @@ json
 8.	Create a new google sheet with the same name as that specified in your config.py
 9.	Share the sheet with the email in your client_secret.json
 
+### TODO:
+----------------
+- [ ] make pypi package
+- [ ] make CLI
