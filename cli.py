@@ -9,3 +9,7 @@ config_data = config()
 @click.option("--sheet-name", prompt="Sheet name", default=config_data['sheet_name'], help="The key of a spreadsheet. (can be found in the sheet URL)")
 def send_to_sheets(query: str, sheet_name: str = config_data['sheet_name']):
     table_to_sheets(query, sheet_name)
+
+
+if __name__ == '__main__':
+    send_to_sheets()

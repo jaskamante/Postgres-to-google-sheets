@@ -8,7 +8,6 @@ with open('config.json') as config_file:
 def config():
 
     config_data = {}
-    config_data['table_name'] = data['gsheets']['table_name']
     config_data['sheet_name'] = data['gsheets']['sheet_name']
     config_data['credential_file_name'] = data['gsheets']['credential_file_name']
     return config_data
