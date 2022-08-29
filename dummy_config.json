@@ -1,14 +1,14 @@
 {
-    "postgres":{
-        "host":"<your host>",
-        "database":"<your database name>",
-        "user":"<your user>",
-        "password":"<your password>",
-        "port":"<your postgres port>"
-    },
+  "postgres": {
+    "host": "<your host>",
+    "database": "<your database name>",
+    "user": "<your user>",
+    "password": "<your password>",
+    "port": "<your postgres port>"
+  },
 
-    "gsheets":{
-        "sheet_name": "<your sheet name>",
-        "credential_file_name": "client_secret.json"
-    }
+  "gsheets": {
+    "sheet_name": "<your sheet name>",
+    "credential_file_name": "client_secret.json"
+  }
 }

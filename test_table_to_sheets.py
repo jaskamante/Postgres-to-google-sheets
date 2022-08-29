@@ -16,7 +16,4 @@ LIMIT 10;
 sheet_name = config_data['sheet_name']
 
 # call function to transfer data from a table to google sheets
-table_to_sheets(table_name, sheet_name)
-
-
-
+table_to_sheets(query, sheet_name)

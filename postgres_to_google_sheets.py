@@ -1,5 +1,5 @@
 import psycopg2
-import pandas as pd   
+import pandas as pd
 import pygsheets
 from psycopg2 import Error
 from connection import connection
@@ -15,7 +15,7 @@ def table_to_sheets(query, sheet_name):
         params = connection()
 
         print (params)
- 
+
         # connect to the PostgreSQL server
         print('connecting to the PostgreSQL database...')
         conn = psycopg2.connect(**params)
@@ -41,7 +41,7 @@ def table_to_sheets(query, sheet_name):
         #open the google spreadsheet with the provided sheet name
         sh = gc.open_by_key(sheet_name)
         print('opened the sheet with the sheet name provided as ' + sheet_name)
-        
+
         #select the first sheet as the worksheet
         wks = sh.sheet1
 
@@ -49,7 +49,7 @@ def table_to_sheets(query, sheet_name):
         wks.clear(start='A1', end=None, fields='*')
         print('worksheet has been cleared')
 
-        #update the first sheet with the dataFrame df, starting at cell B2. 
+        #update the first sheet with the dataFrame df, starting at cell B2.
         wks.set_dataframe(df,(1,1))
         print('data from the database table has been transferred to the google spreadsheet')
 
@@ -59,8 +59,8 @@ def table_to_sheets(query, sheet_name):
         if conn is not None:
             conn.close()
             print('database connection closed')
- 
+
 #if __name__ == '__main__':
-   # table_to_sheets(query, sheet_name)
+    # table_to_sheets(query, sheet_name)
 
 
