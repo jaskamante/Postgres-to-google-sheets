@@ -7,8 +7,9 @@ from config import config
 import os
 import json
 
+
 def table_to_sheets(query, sheet_name):
-    #Connect to the PostgreSQL database server
+    # Connect to the PostgreSQL database server
     conn = None
     try:
         # read connection parameters
@@ -24,32 +25,32 @@ def table_to_sheets(query, sheet_name):
 
         credential_file_name = config_data['credential_file_name']
 
-        #Using pandas library, get the data from the table as a dataFrame
-        df = pd.read_sql('{query}'.format(query = query), conn)
+        # Using pandas library, get the data from the table as a dataFrame
+        df = pd.read_sql('{query}'.format(query=query), conn)
         #print(df)
         print('successfully read in data')
 
-        #get working directory path
+        # get working directory path
         dirpath = os.getcwd()
         credential_file_location = dirpath + '/' +credential_file_name
         #print(credential_file_location)
 
-        #authorise connection to your google sheets
+        # authorise connection to your google sheets
         gc = pygsheets.authorize(service_file = credential_file_location)
         print('successfully authorised and connected to google sheets')
 
-        #open the google spreadsheet with the provided sheet name
+        # open the google spreadsheet with the provided sheet name
         sh = gc.open_by_key(sheet_name)
         print('opened the sheet with the sheet name provided as ' + sheet_name)
 
-        #select the first sheet as the worksheet
+        # select the first sheet as the worksheet
         wks = sh.sheet1
 
-        #clear the worksheet
+        # clear the worksheet
         wks.clear(start='A1', end=None, fields='*')
         print('worksheet has been cleared')
 
-        #update the first sheet with the dataFrame df, starting at cell B2.
+        # update the first sheet with the dataFrame df, starting at cell B2.
         wks.set_dataframe(df,(1,1))
         print('data from the database table has been transferred to the google spreadsheet')
 

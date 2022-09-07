@@ -5,7 +5,7 @@
 from postgres_to_google_sheets import table_to_sheets
 from config import config
 
-#google sheets details
+# google sheets details
 config_data = config()
 query = '''
 SELECT *
