@@ -12,4 +12,3 @@ def connection():
           'user': data['postgres']['user'], 'password': data['postgres']['password']}
     #print(db)
     return db
-
