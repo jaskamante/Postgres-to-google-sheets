@@ -1,0 +1,4 @@
+config.json
+client_secret.json
+venv/
+.idea/
